@@ -33,16 +33,16 @@ export class MemberDetailComponent implements OnInit {
 
   getImages(){
     if(!this.member) return [];
-    const imagesUrls = [];
+    const imageUrls = [];
     for(const photo of this.member.photos)
     {
-      imagesUrls.push({
+      imageUrls.push({
         small: photo.url,
         medium: photo.url,
         big: photo.url
       })
     }
-    return imagesUrls;
+    return imageUrls;
   }
 
   loadMember(){
