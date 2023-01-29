@@ -16,9 +16,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
       positionClass:'toast-bottom-right'
     }),
     NgxGalleryModule,
-    NgxSpinnerModule.forRoot({
-      type: 'triangle-skew-spin'
-    })
+    NgxSpinnerModule
   ],
   exports:[
     BsDropdownModule,
