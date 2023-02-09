@@ -5,4 +5,4 @@ Client Side: Anguler.
 
 Server Side: C#.
 
-Another technologies: Docker, .NET, Entity Framework Microservice, NServiceBus, RabbitMQ, Anguler Material.
+Another technologies: .NET CORE, Entity Framework, Anguler Material.
