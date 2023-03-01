@@ -24,7 +24,7 @@ export class UserManagmentComponent implements OnInit {
     this.getUsersWithRoles();
   }
 
-  getUsersWithRoles(){
+  getUsersWithRoles() {
     this.adminService.getUsersWithRoles().subscribe({
       next: users => this.users = users
     })
@@ -40,6 +40,19 @@ export class UserManagmentComponent implements OnInit {
       }
     }
     this.bsModalRef = this.modalService.show(RolesModalComponent, config);
+    this.bsModalRef.onHide?.subscribe({
+      next: () => {
+        const selectedRoles = this.bsModalRef.content?.selectedRoles;
+        if (!this.arrayEqual(selectedRoles!, user.roles)) {
+          this.adminService.updateUserRoles(user.username, selectedRoles!).subscribe({
+            next: roles => user.roles = roles
+          })
+        }
+      }
+    })
   }
 
+  private arrayEqual(arr1: any[], arr2: any[]) {
+    return JSON.stringify(arr1.sort()) === JSON.stringify(arr2.sort());
+  }
 }
