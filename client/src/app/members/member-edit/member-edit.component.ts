@@ -27,6 +27,7 @@ export class MemberEditComponent implements OnInit {
     private toastr: ToastrService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe({
       next: user => this.user = user
+
     })
 
   }
@@ -35,8 +36,8 @@ export class MemberEditComponent implements OnInit {
     this.loadMember();
   }
 
-  loadMember(){
-    if(!this.user) return;
+  loadMember() {
+    if (!this.user) return;
     this.memberService.getMember(this.user.username).subscribe({
       next: member => this.member = member
     })
