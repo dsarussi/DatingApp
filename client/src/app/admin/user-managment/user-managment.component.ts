@@ -4,6 +4,7 @@ import { RolesModalComponent } from 'src/app/modals/roles-modal/roles-modal.comp
 import { User } from 'src/app/_models/user';
 import { AdminService } from 'src/app/_services/admin.service';
 
+
 @Component({
   selector: 'app-user-managment',
   templateUrl: './user-managment.component.html',
