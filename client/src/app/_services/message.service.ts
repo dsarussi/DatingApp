@@ -27,7 +27,7 @@ export class MessageService {
     })
     .withAutomaticReconnect().build();
     this.hubConnection.start().catch(error => console.log(error));
-    this.hubConnection.on('RecieveMessageThread', messages => {
+    this.hubConnection.on('ReciveMessageThread', messages => {
       this.messageThreadSource.next(messages);
     })
 
@@ -40,26 +40,28 @@ export class MessageService {
     })
   }
 
-  stopHubConnection(){
-    if(this.hubConnection) this.hubConnection.stop();
+  stopHubConnection() {
+    if (this.hubConnection) {
+      this.hubConnection.stop();
+    }
   }
 
-  getMessages(pageNumber: number, pageSize: number, container: string){
+  getMessages(pageNumber: number, pageSize: number, container: string) {
     let params = getPaginationHeaders(pageNumber, pageSize);
-    params = params.append('container', container);
-
+    params = params.append('Container', container);
     return getPaginatedResult<Message[]>(this.baseUrl + 'messages', params, this.http);
   }
 
-  getMessageThread(username: string){
+  getMessageThread(username: string) {
     return this.http.get<Message[]>(this.baseUrl + 'messages/thread/' + username);
   }
 
-  async sendMessage(username: string, content: string){
-    return this.hubConnection?.invoke('SendMessage', {recipientUsername: username, content}).catch(error => console.log(error));
+  async sendMessage(username: string, content: string) {
+    return this.hubConnection?.invoke('SendMessage', {recipientUsername: username, content})
+      .catch(error => console.log(error));
   }
 
-  deleteMessage(id: number){
+  deleteMessage(id: number) {
     return this.http.delete(this.baseUrl + 'messages/' + id);
   }
 }
