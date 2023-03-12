@@ -22,7 +22,7 @@ export class MessagesComponent implements OnInit {
     this.loadMessages();
   }
 
-  loadMessages(){
+  loadMessages() {
     this.loading = true;
     this.messageService.getMessages(this.pageNumber, this.pageSize, this.container).subscribe({
       next: response => {

@@ -2,9 +2,8 @@ using API.Data;
 using API.Helpers;
 using API.Interfaces;
 using API.Services;
-using API.SingalR;
+using API.SignalR;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.OpenApi.Models;
 
 namespace API.Extensions
 {

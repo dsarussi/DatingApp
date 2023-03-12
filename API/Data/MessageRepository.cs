@@ -51,13 +51,6 @@ namespace API.Data
             return await _context.Messages.FindAsync(id);
         }
 
-        public async Task<Group> GetMessageForUser(string groupName)
-        {
-            return await _context.Groups
-                .Include(x => x.Connections)
-                .FirstOrDefaultAsync(x => x.Name == groupName);
-        }
-
         public Task<PagedList<MessageDto>> GetMessageForUser(MessageParams messageParams)
         {
             throw new NotImplementedException();

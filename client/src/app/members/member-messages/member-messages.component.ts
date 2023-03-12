@@ -18,8 +18,8 @@ export class MemberMessagesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  sendMessage(){
-    if(!this.username) return;    
+  sendMessage() {
+    if (!this.username) return;
     this.messageService.sendMessage(this.username, this.messageContent).then(() => {
       this.messageForm?.reset();
     })
