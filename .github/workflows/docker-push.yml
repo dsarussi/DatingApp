@@ -25,4 +25,4 @@ jobs:
         with:
           context: "{{defaultContext}}:API"
           push: true
-          tags: dorsarussi/datingapp/app:latest
+          tags: dsarussi/DatingApp/app:latest
