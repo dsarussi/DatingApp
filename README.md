@@ -1,3 +1,5 @@
+![certificate](https://user-images.githubusercontent.com/66414053/226170673-2c527b76-01fd-4049-acc0-2cc882c9e06c.jpeg)
+
 # DatingApp Architecture Document
 The DatingApp project is a web application built using .NET Core and Angular frameworks.
 The purpose of the application is to allow users to register, create profiles, and interact with each other through messaging and photo sharing.
@@ -70,12 +72,20 @@ The application implements paging, sorting, and filtering to improve performance
 The DatingApp project is a web application built using .NET Core and Angular frameworks. The application uses a client-server architecture, with the server-side component built using .NET Core and the client-side component built using Angular. The application follows the MVC pattern, repository pattern, and other best practices to ensure a clean and maintainable codebase. The application is deployed to Fly.io, a platform for building and deploying containerized applications.
 
 ## Key Features
-Authentication
-Client register and login
-Error handling
-User interface
-Photo management
-Reactive forms
-Paging, sorting, and filtering
-Messaging
-SignalR
+*Authentication
+
+*Client register and login
+
+*Error handling
+
+*User interface
+
+*Photo management
+
+*Reactive forms
+
+*Paging, sorting, and filtering
+
+*Messaging
+
+*SignalR
